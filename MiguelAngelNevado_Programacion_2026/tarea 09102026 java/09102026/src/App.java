@@ -9,7 +9,10 @@ public class App {
         //ejercicio5();
         //ejercicio6();
         //ejercicio7();
-        ejercicio8();
+        //ejercicio8();
+        //ejercicio9();
+        //ejercicio10();
+        ejercicio11();
     }
 
     public static void ejercicio1()
@@ -152,13 +155,14 @@ public class App {
         }
     }
 
-    public static void ejercicio8(int total)
+    public static void ejercicio8()
     {
         System.out.println("¿Que operación quieres realizar?");
         System.out.printf("[1] SUMAR\n[2] RESTAR\n[3] MULTIPLICAR\n");
         System.out.printf("[4] DIVIDIR\n[5] NUMEROS PRIMOS\n[6] SALIR\n");
         Scanner keyboard = new Scanner(System.in);
         int opcion = keyboard.nextInt();
+        int total;
         switch (opcion) {
             case 1:     // SUMAR
                 int operacionSumar = 1;
@@ -251,90 +255,137 @@ public class App {
         System.out.println("Ahora, averiguaré la letra de tu DNI. Porfavor, introduce tu DNI:");
         Scanner keyboard = new Scanner(System.in);
         int dni = keyboard.nextInt();
-        int letraCorrespondiente = dni / 7;
+        char letra = ' ';
+        int letraCorrespondiente = dni % 23;
         switch (letraCorrespondiente) 
         {
             case 1:
-                char letra = 'A';
+                letra = 'R';
                 break;
             case 2:
-                char letra = 'B';
+                letra = 'W';
                 break;
             case 3:
-                char letra = 'C';
+                letra = 'A';
                 break;
             case 4:
-                char letra = 'D';
+                letra = 'G';
                 break;
             case 5:
-                char letra = 'E';
+                letra = 'M';
                 break;
             case 6:
-                char letra = 'F';
+                letra = 'Y';
                 break;
             case 7:
-                char letra = 'G';
+                letra = 'F';
                 break;
             case 8:
-                char letra = 'H';
+                letra = 'P';
                 break;
             case 9:
-                char letra = 'I';
+                letra = 'D';
                 break;
             case 10:
-                char letra = 'J';
+                letra = 'X';
                 break;
             case 11:
-                char letra = 'K';
+                letra = 'B';
                 break;
             case 12:
-                char letra = 'L';
+                letra = 'N';
                 break;
             case 13:
-                char letra = 'M';
+                letra = 'J';
                 break;
             case 14:
-                char letra = 'N';
+                letra = 'Z';
                 break;
             case 15:
-                char letra = 'O';
+                letra = 'S';
                 break;
             case 16:
-                char letra = 'P';
+                letra = 'Q';
                 break;
             case 17:
-                char letra = 'Q';
+                letra = 'V';
                 break;
             case 18:
-                char letra = 'R';
+                letra = 'H';
                 break;
             case 19:
-                char letra = 'S';
+                letra = 'L';
                 break;
             case 20:
-                char letra = 'T';
+                letra = 'C';
                 break;
             case 21:
-                char letra = 'U';
+                letra = 'K';
                 break;
             case 22:
-                char letra = 'V';
+                letra = 'E';
                 break;
             case 23:
-                char letra = 'W';
+                letra = 'T';
                 break;
-            case 24:
-                char letra = 'X';
-                break;
-            case 25:
-                char letra = 'Y';
-                break;
-            case 26:
-                char letra = 'Z';
-                break;
-        
             default:
+                letra = 'X';
                 break;
+            }
+        System.out.println("Tu DNI es " + dni + letra);
+    }
+
+    public static void ejercicio10()
+    {
+        System.out.println("Introduce un texto (cadena de texto)");
+        Scanner keyboard = new Scanner(System.in);
+        String texto = keyboard.nextLine();
+        int vocales = 0;
+        String textoMinuscula = texto.toLowerCase();
+        for (int i = 0; i < textoMinuscula.length(); i++)
+        // El índice es 0. Mientras el índice sea menor que la longitud del texto, al indice se le sumará una unidad.
+        {
+            char letra = textoMinuscula.charAt(i);
+            if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u' ||
+                letra == 'á' || letra == 'é' || letra == 'í' || letra == 'ó' || letra == 'ú')
+            {
+               vocales++; 
+            }
         }
+        System.out.println("La cadena de texto que introdujiste tiene: " + vocales + " vocales.");
+    }
+
+    public static void ejercicio11()
+    {
+        System.out.println("Ahora abrirás una caja fuerte. Tienes 4 oportunidades.");
+        System.out.println("Si no logras averiguar la combinación, quedarás eliminado.");
+        Scanner keyboard = new Scanner(System.in);
+        String combinacion = "miguel2007";
+        //ESTA VARIABLE SIRVE PARA EXAMINAR SI LA CONTRASEÑA INTRODUCIDA ES CORRECTA
+        boolean correcto = false;
+        for (int i = 0; i <= 4; i++)
+        {
+            String codigoIntroducido = keyboard.nextLine();
+            if (codigoIntroducido.equals(combinacion))
+            {
+                System.out.println("Codigo correcto.");
+                correcto = true;
+                i = 4;
+            }
+            else
+            {
+                System.out.println("Codigo INCORRECTO.");
+                correcto = false;
+            }
+        }
+        if (correcto != true)
+        {
+            System.out.println("Se te han acabado tus oportunidades");
+        }
+        else
+        {
+            System.out.println("Acceso garantizado");
+        }
+        
     }
 }
