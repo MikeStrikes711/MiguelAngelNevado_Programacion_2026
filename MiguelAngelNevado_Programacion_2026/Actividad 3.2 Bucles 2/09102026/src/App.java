@@ -12,7 +12,8 @@ public class App {
         //ejercicio8();
         //ejercicio9();
         //ejercicio10();
-        ejercicio11();
+        //ejercicio11();
+        ejercicio12();
     }
 
     public static void ejercicio1()
@@ -387,5 +388,40 @@ public class App {
             System.out.println("Acceso garantizado");
         }
         
+    }
+
+    public static void ejercicio12()
+    {
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Ingresa el primer numero");
+        int numero1 = keyboard.nextInt();
+        System.out.println("Ingresa el segundo numero");
+        int numero2 = keyboard.nextInt();
+        int sumaDivisoresNumero1 = 0;
+        for (int i = 1; i < numero1; i++)
+        {
+            if (numero1 % i == 0)
+            {
+                sumaDivisoresNumero1 += 1;
+            }
+        }
+
+        int sumaDivisoresNumero2 = 0;
+        for (int i = 1; i < numero2; i++)
+        {
+            if (numero2 % i == 0)
+            {
+                sumaDivisoresNumero2 += 1;
+            }
+        }
+
+        if (sumaDivisoresNumero1 == numero2 && sumaDivisoresNumero2 == numero1)
+        {
+            System.out.println(numero1 + " y " + numero2 + " son amigos");
+        }
+        else
+        {
+            System.out.println(numero1 + " y " + numero2 + " no son amigos");
+        }
     }
 }
