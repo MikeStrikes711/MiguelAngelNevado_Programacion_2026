@@ -13,7 +13,8 @@ public class App {
         //ejercicio9();
         //ejercicio10();
         //ejercicio11();
-        ejercicio12();
+        //ejercicio12();
+        ejercicio13();
     }
 
     public static void ejercicio1()
@@ -422,6 +423,38 @@ public class App {
         else
         {
             System.out.println(numero1 + " y " + numero2 + " no son amigos");
+        }
+    }
+
+    public static void ejercicio13()
+    {
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("¿Cuántas cifras de la serie Fibonacci quieres mostrar?");
+        int numCifras = keyboard.nextInt();
+        if (numCifras > 0)
+        {
+            if (numCifras == 1)
+            {
+                System.out.print("0");
+            }
+            if (numCifras == 2)
+            {
+                System.out.print(", 1");
+            }
+            else
+            {
+                int fib1 = 0;
+                int fib2 = 1;
+                int actual = 0;
+                System.out.print("0, 1");
+                for (int i = 2; i < numCifras; i++)
+                {
+                    actual = fib1 + fib2;
+                    fib1 = fib2;
+                    fib2 = actual;
+                    System.out.print(", " + actual);
+                }
+            }
         }
     }
 }
