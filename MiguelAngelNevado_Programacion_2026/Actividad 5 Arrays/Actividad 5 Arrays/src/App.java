@@ -5,7 +5,7 @@ public class App
     static Scanner keyboard = new Scanner(System.in);
     public static void main(String[] args) throws Exception 
     {
-        ejercicio1();
+        ejercicio3();
     }
 
     // EJERCICIO 1
@@ -50,5 +50,15 @@ public class App
         a[5] = 25;
         b = a;
         System.out.println(Arrays.toString(b));
+    }
+
+    // EJERCICIO 3
+    /* Realiza un programa que pida números enteros positivos al
+    usuario y los vaya almacenando en un array a, cuando el
+    usuario introduzca -1 se dejará de pedir números y se
+    mostrará el array a de los números que ha introducido
+    (exceptuando el -1). */
+    public static void ejercicio3()
+    {
     }
 }
