@@ -5,7 +5,10 @@ public class App
     static Scanner keyboard = new Scanner(System.in);
     public static void main(String[] args) throws Exception 
     {
-        ejercicio3();
+        //ejercicio1();
+        //ejercicio2();
+        //ejercicio3();
+        ejercicio4();
     }
 
     // EJERCICIO 1
@@ -60,5 +63,29 @@ public class App
     (exceptuando el -1). */
     public static void ejercicio3()
     {
+    }
+
+    // EJERCICIO 4
+    /*Realiza un programa que pida al usuario un array a de 10
+    elementos y muestre por pantalla un array b que contenga los
+    elementos al revés, finalmente muestra por pantalla el array b. */
+    public static void ejercicio4()
+    {
+        int[] a = new int[10];
+        for (int i = 0; i < 10; i++)
+        {
+            System.out.println("Introduce el valor del array nº " + (i+1));
+            a[i] = keyboard.nextInt();
+            System.out.println(Arrays.toString(a));
+        } 
+        System.out.println("Tu array 'a' vale: " + Arrays.toString(a));
+        int[] b = new int [10];
+        int n = 0;
+        for (int i = (b.length-1); i > 0; i--)
+        {
+            b[i] = a[n];
+            n +=1;
+        }
+        System.out.println(Arrays.toString(b));
     }
 }
