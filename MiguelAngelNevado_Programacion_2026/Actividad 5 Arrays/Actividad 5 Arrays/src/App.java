@@ -5,9 +5,9 @@ public class App
     static Scanner keyboard = new Scanner(System.in);
     public static void main(String[] args) throws Exception 
     {
-        //ejercicio1();
-        //ejercicio2();
-        //ejercicio3();
+        ejercicio1();
+        ejercicio2();
+        ejercicio3();
         ejercicio4();
     }
 
@@ -71,6 +71,7 @@ public class App
     elementos al revés, finalmente muestra por pantalla el array b. */
     public static void ejercicio4()
     {
+        // ARRAY NUMERO 1 (A)
         int[] a = new int[10];
         for (int i = 0; i < 10; i++)
         {
@@ -78,7 +79,9 @@ public class App
             a[i] = keyboard.nextInt();
             System.out.println(Arrays.toString(a));
         } 
-        System.out.println("Tu array 'a' vale: " + Arrays.toString(a));
+        System.out.println("Tu array 'a' vale: " + Arrays.toString(a)); 
+
+        // ARRAY NUMERO 2 (B)
         int[] b = new int [10];
         int n = 0;
         for (int i = (b.length-1); i > 0; i--)
@@ -86,6 +89,6 @@ public class App
             b[i] = a[n];
             n +=1;
         }
-        System.out.println(Arrays.toString(b));
+        System.out.println("El inverso es: " + Arrays.toString(b));
     }
 }
