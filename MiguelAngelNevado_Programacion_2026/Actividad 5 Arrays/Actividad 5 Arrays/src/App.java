@@ -63,6 +63,29 @@ public class App
     (exceptuando el -1). */
     public static void ejercicio3()
     {
+        int[] a = new int[0];
+        boolean salir = false;
+        while (!salir)
+        {
+            System.out.println("Introduzca un numero");
+            int numero = keyboard.nextInt();
+            if (numero <= 0)
+            {
+                if (numero == -1)
+                {
+                    salir = true;
+                }
+                else
+                {
+                    System.out.println("El numero no es valido");
+                }
+            }
+            else
+            {
+                a = Arrays.copyOf(a, a.length+1);
+                a[a.length-1] = numero;
+            }
+        }
     }
 
     // EJERCICIO 4
@@ -91,4 +114,9 @@ public class App
         }
         System.out.println("El inverso es: " + Arrays.toString(b));
     }
+
+    // EJERCICIO 5
+    /* Realiza un programa que pida al usuario un conjunto de
+    números para un array a de 8 elementos y muestre por
+    pantalla un array b que solo contenga los elementos impares. */
 }
