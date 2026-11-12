@@ -14,7 +14,8 @@ public class App
         //ejercicio5();
         //ejercicio6();
         //ejercicio7();
-        ejercicio8();
+        //ejercicio8();
+        ejercicio9();
     }
 
     // EJERCICIO 1
@@ -268,5 +269,37 @@ public class App
             }
         }
         System.out.println(Arrays.toString(b));
+    }
+
+    // EJERCICIO 9
+    /*Realiza un programa que dado un array desordenado lo
+    ordene y lo muestre por consola siguiendo el algoritmo que
+    desees. */
+    public static void ejercicio9()
+    {
+        // CREACION DEL ARRAY DESORDENADO
+        int[] a = new int [20];
+        for (int q = 0; q < a.length; q++)
+        {
+            a[q] = random.nextInt(100);
+        }
+        System.out.println(Arrays.toString(a));
+
+        // ORDENAR ARRAY
+        int n = a.length;
+        for (int i = 0; i < n-1; i++)
+        {
+            for (int j = 0; j < n-1-i; j++)
+            {
+                if (a[j] > a[j+1])
+                {
+                    int aux = a[j];
+                    a[j] = a[j+1];
+                    a[j+1] = aux;
+                }
+            }
+        }
+
+        System.out.println(Arrays.toString(a));
     }
 }
