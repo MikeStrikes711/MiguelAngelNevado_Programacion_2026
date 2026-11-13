@@ -15,7 +15,8 @@ public class App
         //ejercicio6();
         //ejercicio7();
         //ejercicio8();
-        ejercicio9();
+        //ejercicio9();
+        borrarBucles();
     }
 
     // EJERCICIO 1
@@ -301,5 +302,27 @@ public class App
         }
 
         System.out.println(Arrays.toString(a));
+    }
+
+    // EJERCICIO DE CLASE
+    public static void borrarBucles()
+    {
+        int a[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+        System.out.println(java.util.Arrays.toString(a));
+
+        int n = a.length;
+        for (int i = 0; i < n; i++)
+        {
+            if (a[i] %2 == 0) 
+            {
+                for (int j = i; j < n-1; j++)
+                {
+                    a[j] = a[j + 1];
+                }
+                n--;
+                i--;
+            }
+        }
+        System.out.println(java.util.Arrays.toString(a));
     }
 }
