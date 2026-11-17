@@ -16,7 +16,11 @@ public class App
         //ejercicio7();
         //ejercicio8();
         //ejercicio9();
-        borrarBucles();
+        //borrarBucles();
+        //ejercicio10();
+        //ejercicio11();
+        //ejercicio12();
+        //ejercicio13();
     }
 
     // EJERCICIO 1
@@ -324,5 +328,139 @@ public class App
             }
         }
         System.out.println(java.util.Arrays.toString(a));
+    }
+
+    // EJERCICIO 10
+    /*Haz un programa que genere 20 números enteros del 1 al
+    50 ambos inclusive y los almacene en un array,
+    posteriormente almacenará en un nuevo array solo los
+    números primos que haya en ese array. Ambos arrays
+    finalmente serán mostrados por consola. */
+    public static boolean esPrimo(int numero)
+    {
+        for (int i=2; i <numero; i++)
+        {
+            if (numero %2 ==0)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void ejercicio10()
+    {
+        int[] datos = new int[20];
+        int[] datosPrimos = new int[0];
+        Random rd = new Random();
+        for (int i=0; i < 20 ;i++)
+        {
+            datos[i] = rd.nextInt(50)+1;
+        }
+        System.out.println(Arrays.toString(datos));
+
+        for (int i=0; i < datos.length; i++)
+        {
+            if (esPrimo(datos[i]))
+            {
+                datosPrimos = Arrays.copyOf(datosPrimos, datosPrimos.length+1);
+                datosPrimos[datosPrimos.length-1] = datos[i];
+            }
+        }
+        System.out.println(Arrays.toString(datosPrimos));
+    }
+
+    // EJERCICIO 11
+    // Realiza un programa que dado un array bidimensional, lo 
+    // muestre por pantalla con la siguiente estructura
+    public static void ejercicio11()
+    {
+        int[][] a =
+        {
+            {1, 2, 3},
+            {4, 5, 6},
+            {4, 5, 3},
+            {4, 2, 1}
+        };
+        for (int i = 0; i < a.length; i++)
+        {
+            for (int j = 0; j < a[i].length; j++)
+            {
+                System.out.print(a[i][j] + " ");
+            }
+            System.out.println(); // Salto de linea
+        }
+    }
+
+    // EJERCICIO 12
+    // Realiza un programa que dado un array bidimensional lo 
+    // rellene de números enteros aleatorios del 2 al 12 (ambos 
+    // inclusive)
+    public static void ejercicio12()
+    {
+        // CREAR ARRAY
+        int[][] a = new int[4][3];
+        for (int i =0; i < a.length; i++)
+        {
+            for (int j = 0; j < a[i].length; j++)
+            {
+                a[i][j] = random.nextInt(12)+1;
+            }
+        }
+        // IMPRIMIR ARRAY
+        for (int i = 0; i < a.length; i++)
+        {
+            for (int j = 0; j < a[i].length; j++)
+            {
+                System.out.print(a[i][j] + " ");
+            }
+            System.out.println(); // Salto de linea
+        }
+    }
+
+    // EJERCICIO 13
+    // Realiza un programa que inserte en un array bidimensional
+    // de 3x3 de números enteros, compuesto solamente por 0, tres
+    // valores 1 en una posición aleatoria, no pueden solaparse, es
+    // decir, ocupar la misma casilla alguno de los tres valores,
+    // después muestra por pantalla el contenido del array.
+    public static void ejercicio13()
+    {
+        Random nuevoRandom = new Random();
+        int[][] a = new int[3][3];
+        int contador = 0;
+        while (contador < 3)
+        {
+            int fila = nuevoRandom.nextInt(3);
+            int columna = nuevoRandom.nextInt(3);
+
+            if (a[fila][columna] == 0) 
+            {
+                a[fila][columna] = 1;
+                contador++;
+            }
+        }
+        // IMPRIMIR ARRAY
+        for(int i = 0; i< a.length; i++)
+        {
+            for(int j = 0; j< a[i].length; j++)
+            {
+                System.out.print(a[i][j] + "\t");
+            }
+            System.out.println();
+        }
+    }
+
+    // EJERCICIO 14
+    //Realiza un programa que pida al usuario el tamaño en las
+    // dos dimensiones (X e Y) de un array bidimensional, construya
+    // un array bidimensional (con esas dimensiones) con todas las
+    // posiciones con el valor 0 y lo muestre por pantalla.
+    // Posteriormente se va introducir en el array el valor 1 en todas
+    // las posiciones exceptuando las que estén en los bordes
+    // exteriores del array, ejemplo:
+    public static void ejercicio14()
+    {
+
     }
 }
