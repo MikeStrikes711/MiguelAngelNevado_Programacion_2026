@@ -10,7 +10,9 @@ public class App
         //ejercicio5();
         //ejercicio6();
         //ejercicio7();
-        ejercicio8();
+        //ejercicio8();
+        //ejercicio9();
+        ejercicio10();
     }
 
     // EJERCICIO 5
@@ -157,7 +159,8 @@ public class App
 
     public static void ejercicio7()
     {
-        String[] diaSemana = {"Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"};
+        String[] diaSemana = {"Lunes", "Martes", "Miércoles", "Jueves", 
+                             "Viernes", "Sábado", "Domingo"};
         int[][] temperaturas = new int[7][2];
 
         for(int i=0; i<temperaturas.length;i++)
@@ -201,7 +204,7 @@ public class App
         }
     }
 
-    // Ejercicio 8
+    // EJERCICIO 8
     // Diseña el algoritmo para un programa que:
     //      1. Cree una tabla bidimensional (matriz) de 5x5 llamada `matriz`.
     //      2. Cargue la tabla con valores numéricos enteros.
@@ -214,9 +217,120 @@ public class App
         {
             for (int x = 0; x < matriz[y].length; x++)
             {
-                matriz[y][x] = random.nextInt(100)+1;
+                matriz[y][x] = random.nextInt(9)+1;
             }
         }
+
+        // MOSTRAR MATRIZ
+        for (int i = 0; i < matriz.length; i++)
+        {
+            for (int j = 0; j < matriz[i].length; j++)
+            {
+                System.out.print(matriz[i][j] + "\t");
+            }
+            System.out.println();
+        }
+        System.out.println();
+
+        // SUMAR FILAS
+        for (int i = 0; i < matriz.length; i++)
+        {
+            int sumaFilas = 0;
+            for (int j = 0; j < matriz[i].length; j++)
+            {
+                sumaFilas += matriz[i][j];
+            }
+            System.out.println("Fila " + (i+1) + ": " + sumaFilas);
+        }
+        System.out.println();
+
+        // SUMAR COLUMNAS
+        for (int j = 0; j < matriz.length; j++)
+        {
+            int sumaFilas = 0;
+            for (int i = 0; i < matriz[j].length; i++)
+            {
+                sumaFilas += matriz[i][j];
+            }
+            System.out.println("Columna " + (j+1) + ": " + sumaFilas);
+        }
+    }
+
+    // EJERCICIO 9
+    // Diseña el algoritmo para un programa que:
+    //      1. Cree una tabla bidimensional de 5x5 llamada `diagonal`.
+    //      2. Cargue la tabla de forma que los componentes de la **diagonal principal** tomen
+    //      el valor `1` y el resto el valor `0`.
+    //      3. Muestre el contenido de la tabla en pantalla.
+    public static void ejercicio9()
+    {
+        int[][] diagonal = new int[5][5];
+        for (int i = 0; i < diagonal.length; i++)
+        {
+            for (int j = 0; j < diagonal[i].length; j++)
+            {
+                if (diagonal[j] == diagonal[i])
+                {
+                    diagonal[i][j] = random.nextInt(2);
+                }
+                else
+                {
+                    diagonal[i][j] = random.nextInt(9)+1;
+                }
+            }
+        }
+
+        // MOSTRAR MATRIZ
+        for (int i = 0; i < diagonal.length; i++)
+        {
+            for (int j = 0; j < diagonal[i].length; j++)
+            {
+                System.out.print(diagonal[i][j] + "\t");
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }
+
+    // EJERCICIO 10
+    // Diseña el algoritmo para un programa que:
+    //      1. Cree una tabla bidimensional de 5x15 llamada `marco`.
+    //      2. Cargue la tabla con ceros y unos para que se dibuje un **marco**. El valor `1`
+    //      debe ocupar las posiciones más externas, y el resto de los elementos (`0`) deben
+    //      quedar en el interior.
+    //      3. Visualice el contenido de la matriz en pantalla, que debería tener este
+    //      aspecto:
+    //      
+    //      111111111111111
+    //      100000000000001
+    //      100000000000001
+    //      100000000000001
+    //      111111111111111
+    public static void ejercicio10()
+    {
+        int[][] marco = new int[5][15];
+        for (int i = 0; i < marco.length; i++)
+        {
+            for (int j = 0; j < marco[i].length; j++)
+            {
+                marco[0][j] = 1;
+                marco[i][0] = 1;
+                marco[i][marco[0].length-1] = 1;
+                marco[marco.length-1][j] = 1;
+            }
+        }
+
+        // MOSTRAR MATRIZ
+        for (int i = 0; i < marco.length; i++)
+        {
+            for (int j = 0; j < marco[i].length; j++)
+            {
+                System.out.print(marco[i][j]);
+            }
+            System.out.println();
+        }
+        System.out.println();
+
     }
 }
  
