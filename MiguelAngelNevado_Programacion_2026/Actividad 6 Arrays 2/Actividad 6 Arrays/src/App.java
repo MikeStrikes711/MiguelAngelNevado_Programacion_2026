@@ -8,7 +8,9 @@ public class App
     public static void main(String[] args) throws Exception 
     {
         //ejercicio5();
-        ejercicio6();
+        //ejercicio6();
+        //ejercicio7();
+        ejercicio8();
     }
 
     // EJERCICIO 5
@@ -127,8 +129,94 @@ public class App
     // * Se lee una temperatura por teclado y se muestran los días cuya temperatura
     // máxima coincide con ella. Si no existe ningún día, se muestra un mensaje
     // informativo.
+    public static int temperaturaMinima(int[][] temperaturas)
+    {
+        int tempMinima = temperaturas[0][0];
+        for(int i=0;i<temperaturas.length;i++)
+        {
+            if(temperaturas[i][0]<tempMinima)
+            {
+                tempMinima = temperaturas[i][0];
+            }
+        }
+        return tempMinima;
+    }
+
+    public static int temperaturaMaxima(int[][] temperaturas)
+    {
+        int tempMaxima = temperaturas[0][1];
+        for(int i=0;i<temperaturas.length;i++)
+        {
+            if(temperaturas[i][1]> tempMaxima)
+            {
+                tempMaxima = temperaturas[i][1];
+            }
+        }
+        return tempMaxima;
+    }
+
     public static void ejercicio7()
     {
-        
+        String[] diaSemana = {"Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"};
+        int[][] temperaturas = new int[7][2];
+
+        for(int i=0; i<temperaturas.length;i++)
+        {
+            System.out.println("Introduzca la temperatura mínima del día " + diaSemana[i]);
+            int tempMinima = keyboard.nextInt();
+            System.out.println("Introduzca la temperatura máxima del día " + diaSemana[i]);
+            int tempMaxima = keyboard.nextInt();
+            temperaturas[i][0] = tempMinima;
+            temperaturas[i][1] = tempMaxima;
+        }
+
+        System.out.println("Introduzca una temperatura");
+        int tempTeclado = keyboard.nextInt();
+        boolean controlMax = false;
+        for(int i=0; i<temperaturas.length;i++)
+        {
+            int tempTotalDia = 0;
+            for(int j=0;j<temperaturas[i].length;j++)
+            {
+                tempTotalDia = tempTotalDia + temperaturas[i][j];
+            }
+            
+            int tempMedia = tempTotalDia/2;
+            System.out.println("La temperatura media del " + diaSemana[i] + " es " + tempMedia);
+            
+            if(temperaturas[i][0] == temperaturaMinima(temperaturas))
+            {
+                System.out.println("El día " + diaSemana[i] + " tiene temperatura mínima");
+            }
+
+            if(temperaturas[i][1] == temperaturaMaxima(temperaturas) && temperaturas[i][1] == tempTeclado)
+            {
+                System.out.println("El día " + diaSemana[i] + " tiene temperatura máxima y coincide con la del teclado");
+                controlMax = true;
+            }
+        }
+
+        if(!controlMax){
+            System.out.println("Ningún día tiene temperatura máxima que coincida con la del teclado");
+        }
+    }
+
+    // Ejercicio 8
+    // Diseña el algoritmo para un programa que:
+    //      1. Cree una tabla bidimensional (matriz) de 5x5 llamada `matriz`.
+    //      2. Cargue la tabla con valores numéricos enteros.
+    //      3. **Sume todos los elementos de cada fila y todos los elementos de cada
+    //      columna**, visualizando los resultados en pantalla.
+    public static void ejercicio8()
+    {
+        int[][] matriz = new int[5][5];
+        for (int y = 0; y < matriz.length; y++)
+        {
+            for (int x = 0; x < matriz[y].length; x++)
+            {
+                matriz[y][x] = random.nextInt(100)+1;
+            }
+        }
     }
 }
+ 
